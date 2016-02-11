@@ -1,0 +1,8 @@
+﻿  pch.cpp
+  App.xaml.cpp
+  MainPage.xaml.cpp
+  XamlTypeInfo.Impl.g.cpp
+  XamlTypeInfo.g.cpp
+    正在创建库 E:\vs\mystl\Debug\mystl\mystl.lib 和对象 E:\vs\mystl\Debug\mystl\mystl.exp
+  mystl.vcxproj -> E:\vs\mystl\Debug\mystl\mystl.exe
+  mystl.vcxproj -> E:\vs\mystl\Debug\mystl\mystl.pdb (Partial PDB)
