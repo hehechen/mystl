@@ -28,13 +28,20 @@ namespace Chenstl {
 		typedef const value_type& const_reference;
 		typedef size_t size_type;
 		typedef ptrdiff_t difference_type;
+		typedef simple_alloc<value_type, Alloc>	data_allocator;
 
 		iterator begin() { return start; }
 		iterator end() { return finish; }
 		size_type size() { return size_type(end() - begin()); }
 
-		typedef simple_alloc<value_type, Alloc>	data_allocator;
+
+		vector() : start(0), finish(0), end_of_storage(0) {}
 		vector(size_t n, const T& value) { fill_initialize(n, value); }	//个数及初值
+		vector(const_iterator first, const_iterator last): start(0), finish(0), end_of_storage(0)
+		{
+			for (; first != last; ++first)
+				push_back(*first);
+		}
 		~vector() 
 		{ 
 			destroy(start, finish); 
@@ -93,6 +100,7 @@ namespace Chenstl {
 				}
 			}
 		}
+		reference back() { return *(end() - 1); }
 
 	private:
 		iterator start,finish;

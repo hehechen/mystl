@@ -243,7 +243,7 @@ namespace Chenstl {
 			tmp->next = first.node;
 			first.node->prev = tmp;
 		}
-		void swap(list<T, Alloc>& x) { _swap(node, x.node); }
+		void swap(list<T, Alloc>& x) { Chenstl::swap(node, x.node); }
 	};
 }
 

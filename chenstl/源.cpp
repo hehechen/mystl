@@ -2,6 +2,7 @@
 #include<iostream>
 #include "vector.h"
 #include"list.h"
+#include "heap.hpp"
 using namespace Chenstl;
 using namespace std;
 
@@ -14,7 +15,6 @@ int main()
 	a.push_back(3);
 	a.push_back(1);
 	a.push_back(7);
-	cout << a.size() << endl;
 	list<int> b;
 	b.push_back(9);
 	b.push_back(10);
@@ -23,10 +23,9 @@ int main()
 	c.push_back(8);
 	b.merge(c);
 	a.sort();
-	for (auto it : b)
+	for (auto it : a)
 	{
 		cout << it << endl;
 	}
-
 	return 0;
 }

@@ -146,7 +146,7 @@
     <ClInclude Include="alog.h" />
     <ClInclude Include="construct.h" />
     <ClInclude Include="default_alloc.h" />
-    <ClInclude Include="heap.h" />
+    <ClInclude Include="heap.hpp" />
     <ClInclude Include="Iterator.h" />
     <ClInclude Include="list.h" />
     <ClInclude Include="malloc_alloc.h" />

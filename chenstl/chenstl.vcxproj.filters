@@ -42,7 +42,7 @@
     <ClInclude Include="vector.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="heap.h">
+    <ClInclude Include="heap.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

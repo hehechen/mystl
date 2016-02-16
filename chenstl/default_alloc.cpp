@@ -28,11 +28,15 @@ void *default_alloc::allocate(size_t n)
 
 void default_alloc::deallocate(void *p, size_t n)
 {
-	free(p);
-}
-void * Chenstl::default_alloc::realloc(void * p, size_t old_sz, size_t new_sz)
-{
-	return nullptr;
+	if (n > 128)
+	{
+		malloc_alloc::decllocate(p);
+		return;
+	}
+	obj *q = (obj *)p;
+	obj **my_free_list = free_list + FREELIST_INDEX(n);
+	q->next = *my_free_list;
+	*my_free_list = q;
 }
 //返回一个大小为n的对象，并可能加入大小为n的其他区块到freelist
 //在ANSI c中，void *不允许进行加减操作，所以chunk用char *
@@ -49,14 +53,14 @@ void *default_alloc::refill(size_t n)
 	my_free_list = free_list + FREELIST_INDEX(n);
 	result = (obj *)chunk;	//这一块返回给客户端
 	//将freellist指向分配的区域
-	*my_free_list = next = (obj *)chunk + n;
+	*my_free_list = next = (obj *)(chunk + n);
 	for (int i = 1;; i++)
 	{
 		current = next;
 		next = (obj *)((char *)next + n);	//这里注意不能直接用next+n
 		if (i == objs - 1)
 		{
-			current->next = 0;
+			current->next = nullptr;
 			break;
 		}
 		else
@@ -93,7 +97,7 @@ char *default_alloc::chunk_alloc(size_t size, int &nobjs)
 			((obj *)start_free)->next = *my_free_list;
 			*my_free_list = (obj *)start_free;
 		}
-		start_free = (char *)malloc(bytes_to_get+100);
+		start_free = (char *)malloc(bytes_to_get);
 		if (!start_free) 
 		{//系统堆内存不足，寻找还未使用的freelist
 			obj *p = 0;
