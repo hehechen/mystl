@@ -45,6 +45,18 @@
     <ClInclude Include="heap.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="deque.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RBtree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RBtree_impl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pair.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="construct.cpp">

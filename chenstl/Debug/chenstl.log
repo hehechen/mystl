@@ -1,8 +1,3 @@
-﻿  /Zi 和 /Z7 均未指定；代码插装将添加 /Zi
-  代码插装正在添加 (/Ob0) 以关闭内联
-  源.cpp
-  正在对 源.cpp 执行代码插装
-  Micro Focus Linker Driver v11.1.0.86
-  Copyright (c) Micro Focus 1997-2012. All rights reserved.
-  
+﻿  源.cpp
+e:\vs\mystl\chenstl\源.cpp(12): warning C4101: “a”: 未引用的局部变量
   chenstl.vcxproj -> E:\vs\mystl\Debug\chenstl.exe
